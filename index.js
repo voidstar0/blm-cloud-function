@@ -1,5 +1,5 @@
 const colors = require('colorthief');
-const { createCanvas, loadImage, createImageData } = require('canvas');
+const { createCanvas, loadImage } = require('canvas');
 
 exports.isSolidColor = (req, res) => {
   colors.getColor(req.body.img_url).then(dominantColor => {
@@ -18,7 +18,7 @@ const mostlyDark = async (url, threshold = 20) => {
   const numSamples = 1000;
   const percentageThreshold = 75;
 
-  const image = await loadImage(url)
+  const image = await loadImage(url);
   const canvas = createCanvas(image.width, image.width);
   const ctx = canvas.getContext('2d');
   ctx.drawImage(image, 0, 0);
