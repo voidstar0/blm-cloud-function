@@ -30,7 +30,6 @@ const mostlyDark = async (url, threshold = 20) => {
     const x = Math.floor(Math.random() * image.width);
     const y = Math.floor(Math.random() * image.height);
     const [r, g, b] = getIndices(x, y, image.width);
-    //console.log({ x, y, r: data[r], g: data[g], b: data[b] })
     const dark = data[r] < threshold && data[g] < threshold && data[b] < threshold;
     if (dark) {
       darkCount++;
